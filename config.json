@@ -1,0 +1,6 @@
+{
+    "root_folder_path": "C:/dades_TFM/",
+    "datasets_folders_names": ["divisions_administratives", "incendis_forestals", "EGIF", "mapa_militar"],
+    "bin_folder_path": "C:/Program Files/PostgreSQL/17/bin/",
+    "data_folder_path": "C:/Program Files/PostgreSQL/17/data/"
+}
