@@ -1,3 +1,5 @@
+#!.\venv\Scripts\python.exe
+
 import json
 import subprocess
 

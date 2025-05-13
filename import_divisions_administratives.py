@@ -1,3 +1,5 @@
+#!.\venv\Scripts\python.exe
+
 import sys
 import json
 import os

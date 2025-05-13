@@ -1,3 +1,5 @@
+#!.\venv\Scripts\python.exe
+
 import sys
 import urllib.request
 import os
