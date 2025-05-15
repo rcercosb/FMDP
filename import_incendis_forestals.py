@@ -1,4 +1,4 @@
-#!.\venv\Scripts\python.exe
+#!.venv\Scripts\python.exe
 
 import sys
 import json

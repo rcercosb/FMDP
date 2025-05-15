@@ -1,4 +1,4 @@
-#!.\venv\Scripts\python.exe
+#!.venv\Scripts\pythonw.exe
 
 import tkinter as tk
 from tkinter import ttk, messagebox
