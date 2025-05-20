@@ -11,12 +11,16 @@ DROP TABLE IF EXISTS type_of_wildfire;
 -- INCENDIS FORESTALS --
 ------------------------
 
+-- Replaces the geometries by a valid version of themselves
+UPDATE public.wildfires_1986_2023
+SET geom = ST_MakeValid(geom);
+
 -- Creates a table where to store the rows with repeated final_code
 CREATE TABLE wildfires_repeated_final_code (gid integer NOT NULL, final_code character varying(11), municipality character varying(80), wildfire_date date, geom geometry);
 
 -- Populates the previous table with a single row for each repeated final_code
 INSERT INTO wildfires_repeated_final_code
-SELECT MIN(gid) AS gid, final_code, MIN(municipality) AS municipality, MIN(wildfire_date) AS wildfire_date, ST_UNION(ST_MakeValid(geom)) as geom
+SELECT MIN(gid) AS gid, final_code, MIN(municipality) AS municipality, MIN(wildfire_date) AS wildfire_date, ST_UNION(geom) as geom
 FROM wildfires_1986_2023
 GROUP BY final_code
 HAVING COUNT(final_code) > 1;
